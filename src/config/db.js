@@ -1,4 +1,5 @@
 import knex from "knex";
+import logger from "../plugins/knex-logger";
 
 const knexConnection = knex({
   client: "pg",
@@ -14,4 +15,4 @@ const knexConnection = knex({
   },
 });
 
-export default knexConnection;
+export default logger(knexConnection);

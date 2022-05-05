@@ -5,6 +5,7 @@ import { cinemaDataSource } from "./dataSources/cinemaDataSources";
 import { scheduleDataSource } from "./dataSources/scheduleDataSources";
 import knexConnection from "./config/db";
 import { filmDataSources } from "./dataSources/filmDataSources";
+import SQLPlugin from "./plugins/sql-plugin";
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
@@ -15,6 +16,7 @@ const server = new ApolloServer({
     scheduleDataSource: new scheduleDataSource(),
     filmDataSources: new filmDataSources(knexConnection),
   }),
+  plugins: [SQLPlugin],
   mock: true,
   mockEntireSchema: false,
 });
