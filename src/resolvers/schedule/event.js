@@ -1,8 +1,8 @@
 export default async ({ filmId }, _, { dataSources }) => {
   const film = await dataSources.filmDataSources.getFilm(filmId % 19);
-  if (film.length > 0) {
+  if (film) {
     return {
-      ...film[0],
+      ...film,
       __typename: "Film",
     };
   }
