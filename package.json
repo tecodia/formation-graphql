@@ -1,0 +1,23 @@
+{
+  "name": "formation-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:tecodia/formation-graphql.git",
+  "author": "Jonathan Jalouzot <jonathan.jalouzot@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "nodemon --exec babel-node ./index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.6.7",
+    "graphql": "^16.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "nodemon": "^2.0.16"
+  }
+}
