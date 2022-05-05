@@ -1,0 +1,8 @@
+union Event = Film | Convention
+
+type Cinema {
+  id: ID!
+  name: String!
+  city: String!
+  currentlyPlaying: [Schedule!]!
+}

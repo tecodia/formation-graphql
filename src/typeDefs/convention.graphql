@@ -1,0 +1,6 @@
+type Convention {
+  id: ID!
+  invited: [Person!]!
+  duration: Int!
+  title: String!
+}

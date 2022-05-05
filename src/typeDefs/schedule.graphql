@@ -1,0 +1,16 @@
+enum Day {
+  SUNDAY
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+}
+
+type Schedule {
+  id: ID!
+  day: Day!
+  playAt: [String!]!
+  evnet: Event!
+}

@@ -1,0 +1,5 @@
+type Query {
+  cinemas: [Cinema!]!
+  events: [Event!]!
+  schedules(cinemaId: ID!, filmId: ID): [Schedule!]!
+}

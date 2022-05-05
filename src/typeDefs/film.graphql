@@ -1,0 +1,18 @@
+enum Genre {
+  HORROR
+  ACTION
+  COMEDY
+  DRAMA
+}
+
+type Film {
+  id: ID!
+  title: String!
+  duration: Int!
+  directors: [Person!]!
+  actors: [Person!]!
+  producers: [Person!]!
+  releaseDate: String!
+  genre: Genre
+  synopsis: String!
+}
