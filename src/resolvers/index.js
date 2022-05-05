@@ -12,4 +12,9 @@ export default {
   Cinema: {
     currentlyPlaying,
   },
+  Event: {
+    __resolveType(obj) {
+      return obj.__typename;
+    },
+  },
 };

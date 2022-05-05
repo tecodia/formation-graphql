@@ -3,7 +3,8 @@ import typeDefs from "./typeDefs";
 import resolvers from "./resolvers";
 import { cinemaDataSource } from "./dataSources/cinemaDataSources";
 import { scheduleDataSource } from "./dataSources/scheduleDataSources";
-
+import knexConnection from "./config/db";
+import { filmDataSources } from "./dataSources/filmDataSources";
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
@@ -12,6 +13,7 @@ const server = new ApolloServer({
   dataSources: () => ({
     cinemaDataSource: new cinemaDataSource(),
     scheduleDataSource: new scheduleDataSource(),
+    filmDataSources: new filmDataSources(knexConnection),
   }),
   mock: true,
   mockEntireSchema: false,
