@@ -12,5 +12,5 @@ type Schedule {
   id: ID!
   day: Day!
   playAt: [String!]!
-  evnet: Event!
+  event: Event
 }

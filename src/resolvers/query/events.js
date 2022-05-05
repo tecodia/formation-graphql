@@ -3,8 +3,7 @@ export default async (parent, args, context, info) => {
 
   return result.map((film) => {
     return {
-      id: film.id,
-      title: film.title,
+      ...film,
       __typename: "Film",
     };
   });

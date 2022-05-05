@@ -7,7 +7,7 @@ const knexConnection = knex({
     user: "root",
     password: "root",
     database: "formationGraphql",
-    port: parseInt(process.env.VIDEO_DB_PORT, 10),
+    port: 5432,
   },
   options: {
     enableArithAbort: false,

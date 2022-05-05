@@ -7,7 +7,6 @@ export class cinemaDataSource extends RESTDataSource {
   }
 
   async getAllCinemas() {
-    const data = await this.get("/cinema");
-    return data;
+    return await this.get("/cinema");
   }
 }

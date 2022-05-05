@@ -1,7 +1,5 @@
-import axios from "axios";
-
-export default async (parent, args, context, info) => {
-  const response = await context.dataSources.cinemaDataSource.getAllCinemas();
+export default async (parent, args, { dataSources }, info) => {
+  const response = await dataSources.cinemaDataSource.getAllCinemas();
 
   return response.map((cinema) => {
     return {

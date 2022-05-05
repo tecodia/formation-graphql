@@ -26,6 +26,7 @@ export default async (parent, args, context, info) => {
       id: schedule.id,
       day: findDay(schedule.day).toUpperCase(),
       playAt: [schedule.playAt],
+      filmId: schedule.filmId,
     };
   });
 };
