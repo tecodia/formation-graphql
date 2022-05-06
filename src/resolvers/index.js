@@ -7,6 +7,7 @@ import actors from "./film/actors";
 import films from "./query/films";
 import conventions from "./query/conventions";
 import createConvention from "./mutation/createConvention";
+import createFilm from "./mutation/createFilm";
 
 export default {
   Query: {
@@ -18,6 +19,7 @@ export default {
   },
   Mutation: {
     createConvention,
+    createFilm,
   },
   Cinema: {
     currentlyPlaying,
@@ -34,6 +36,11 @@ export default {
     },
   },
   CreateConventionResponse: {
+    __resolveType(obj) {
+      return obj.__typename;
+    },
+  },
+  CreateFilmResponse: {
     __resolveType(obj) {
       return obj.__typename;
     },

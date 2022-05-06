@@ -31,4 +31,8 @@ export class filmDataSources extends SQLDataSource {
   getFilms(limit, offset) {
     return this.knex.select("*").from("film").limit(limit).offset(offset);
   }
+
+  async createFilm(id, title) {
+    return this.knex("film").returning("*").insert({ id, title });
+  }
 }

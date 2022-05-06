@@ -24,4 +24,15 @@ export class ActorDataSources extends SQLDataSource {
   getActorByFilmId(filmId) {
     return this.getActorDataloader().load(filmId);
   }
+
+  getActorId(id) {
+    return this.knex.select("*").from("actor").where({ id });
+  }
+
+  addActor(filmId, actorId) {
+    return this.knex("film_actor").insert({
+      film_id: filmId,
+      actor_id: actorId,
+    });
+  }
 }

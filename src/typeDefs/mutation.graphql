@@ -1,3 +1,4 @@
 type Mutation {
-  createConvention(convention: ConventionInput): CreateConventionResponse!
+  createConvention(convention: ConventionInput!): CreateConventionResponse!
+  createFilm(film: FilmInput!): CreateFilmResponse!
 }

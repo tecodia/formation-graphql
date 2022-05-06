@@ -31,3 +31,19 @@ type PageInfo {
   hasNextPage: Boolean!
   endCursor: String!
 }
+
+input FilmInput {
+  id: ID!
+  title: String!
+  actors: [ID!]!
+}
+
+union CreateFilmResponse = Film | CreateFilmError | ActorNotFoundError
+
+type CreateFilmError {
+  error: String!
+}
+
+type ActorNotFoundError {
+  error: String!
+}
