@@ -26,6 +26,9 @@ export default {
     conventionAdded: {
       subscribe: () => PubSubSingleton.asyncIterator(["CONVENTION_ADDED"]),
     },
+    filmAdded: {
+      subscribe: () => PubSubSingleton.asyncIterator(["FILM_ADDED"]),
+    },
   },
   Cinema: {
     currentlyPlaying,

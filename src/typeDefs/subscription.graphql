@@ -1,3 +1,4 @@
 type Subscription {
   conventionAdded: Convention
+  filmAdded: Film
 }

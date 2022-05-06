@@ -34,6 +34,13 @@ export default async (parent, { film }, context, info) => {
       })
     );
 
+    context.pubsub.publish("FILM_ADDED", {
+      filmAdded: {
+        ...newFilm[0],
+        __typename: "Film",
+      },
+    });
+
     return {
       ...newFilm[0],
       __typename: "Film",
