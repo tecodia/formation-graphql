@@ -4,12 +4,14 @@ import schedules from "./query/schedules";
 import currentlyPlaying from "./cinema/currentlyPlaying";
 import event from "./schedule/event";
 import actors from "./film/actors";
+import films from "./query/films";
 
 export default {
   Query: {
     cinemas,
     events,
     schedules,
+    films,
   },
   Cinema: {
     currentlyPlaying,

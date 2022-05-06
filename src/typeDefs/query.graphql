@@ -1,5 +1,7 @@
 type Query {
   cinemas: [Cinema!]!
   events: [Event!]!
+  films(first: Int!, after: String): FilmConnection!
+  conventions(first: Int!, after: String): ConventionConnection!
   schedules(cinemaId: ID!, filmId: ID): [Schedule!]!
 }

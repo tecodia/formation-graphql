@@ -27,4 +27,8 @@ export class filmDataSources extends SQLDataSource {
   getFilm(filmId) {
     return this.getFilmDataloader().load(filmId);
   }
+
+  getFilms(limit, offset) {
+    return this.knex.select("*").from("film").limit(limit).offset(offset);
+  }
 }

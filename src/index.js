@@ -19,8 +19,6 @@ const server = new ApolloServer({
     actorDataSources: new ActorDataSources(knexConnection),
   }),
   plugins: [SQLPlugin],
-  mock: true,
-  mockEntireSchema: false,
 });
 
 // The `listen` method launches a web server.

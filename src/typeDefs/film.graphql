@@ -16,3 +16,18 @@ type Film {
   genre: Genre
   synopsis: String!
 }
+
+type FilmConnection {
+  edges: [FilmEdge!]!
+  pageInfo: PageInfo!
+}
+
+type FilmEdge {
+  node: Film!
+  cursor: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  endCursor: String!
+}
