@@ -9,7 +9,7 @@ export default async (parent, { convention }, context, info) => {
       );
 
     context.pubsub.publish("CONVENTION_ADDED", {
-      conventionCreated: {
+      conventionAdded: {
         ...newConvention[0],
         __typename: "Convention",
       },
