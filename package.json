@@ -13,9 +13,11 @@
     "@graphql-tools/merge": "^8.2.10",
     "apollo-datasource-rest": "^3.5.2",
     "apollo-server": "^3.6.7",
+    "apollo-server-cache-redis": "^3.3.1",
     "axios": "^0.27.2",
     "dataloader": "^2.1.0",
     "graphql": "^16.4.0",
+    "ioredis": "^5.0.4",
     "knex": "^2.0.0",
     "path": "^0.12.7",
     "pg": "^8.7.3"
