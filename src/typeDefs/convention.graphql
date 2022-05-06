@@ -4,3 +4,13 @@ type Convention {
   duration: Int!
   title: String!
 }
+
+type ConventionConnection {
+  edges: [ConventionEdge!]!
+  pageInfo: PageInfo!
+}
+
+type ConventionEdge {
+  node: Convention!
+  cursor: String!
+}

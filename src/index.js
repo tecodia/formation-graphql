@@ -7,6 +7,7 @@ import knexConnection from "./config/db";
 import { filmDataSources } from "./dataSources/filmDataSources";
 import { ActorDataSources } from "./dataSources/actorDataSources";
 import SQLPlugin from "./plugins/sql-plugin";
+import { ConventionsDataSources } from "./dataSources/conventionDataSources";
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
 const server = new ApolloServer({
@@ -17,6 +18,7 @@ const server = new ApolloServer({
     scheduleDataSource: new scheduleDataSource(),
     filmDataSources: new filmDataSources(knexConnection),
     actorDataSources: new ActorDataSources(knexConnection),
+    conventionDataSources: new ConventionsDataSources(knexConnection),
   }),
   plugins: [SQLPlugin],
 });

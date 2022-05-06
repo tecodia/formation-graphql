@@ -5,6 +5,7 @@ import currentlyPlaying from "./cinema/currentlyPlaying";
 import event from "./schedule/event";
 import actors from "./film/actors";
 import films from "./query/films";
+import conventions from "./query/conventions";
 
 export default {
   Query: {
@@ -12,6 +13,7 @@ export default {
     events,
     schedules,
     films,
+    conventions,
   },
   Cinema: {
     currentlyPlaying,
