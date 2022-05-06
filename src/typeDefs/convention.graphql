@@ -14,3 +14,14 @@ type ConventionEdge {
   node: Convention!
   cursor: String!
 }
+
+input ConventionInput {
+  id: ID!
+  title: String!
+}
+
+union CreateConventionResponse = Convention | CreateConventionError
+
+type CreateConventionError {
+  error: String!
+}

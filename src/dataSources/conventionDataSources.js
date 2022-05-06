@@ -22,4 +22,8 @@ export class ConventionsDataSources extends SQLDataSource {
 
     return response;
   }
+
+  async createConvention(id, title) {
+    return this.knex("convention").returning("*").insert({ id, title });
+  }
 }
