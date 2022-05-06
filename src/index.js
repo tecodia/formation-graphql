@@ -7,6 +7,7 @@ import knexConnection from "./config/db";
 import { filmDataSources } from "./dataSources/filmDataSources";
 import { ActorDataSources } from "./dataSources/actorDataSources";
 import SQLPlugin from "./plugins/sql-plugin";
+import RedisPlugin from "./plugins/redis-plugin";
 import { ConventionsDataSources } from "./dataSources/conventionDataSources";
 import { redisCache } from "./config/cache";
 
@@ -26,7 +27,7 @@ const server = new ApolloServer({
     actorDataSources: new ActorDataSources(knexConnection),
     conventionDataSources: new ConventionsDataSources(knexConnection),
   }),
-  plugins: [SQLPlugin],
+  plugins: [SQLPlugin, RedisPlugin],
 });
 
 // The `listen` method launches a web server.

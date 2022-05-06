@@ -1,7 +1,7 @@
-import { RedisCache as ApolloRedisCache } from "apollo-server-cache-redis";
+import { RedisCache } from "../plugins/redis-cache";
 
 const redisOptions = {
   host: "localhost",
 };
 
-export const redisCache = new ApolloRedisCache(redisOptions);
+export const redisCache = new RedisCache(redisOptions);
