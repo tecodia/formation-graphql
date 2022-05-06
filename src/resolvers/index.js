@@ -8,6 +8,7 @@ import films from "./query/films";
 import conventions from "./query/conventions";
 import createConvention from "./mutation/createConvention";
 import createFilm from "./mutation/createFilm";
+import PubSubSingleton from "../config/pubsub";
 
 export default {
   Query: {
@@ -20,6 +21,13 @@ export default {
   Mutation: {
     createConvention,
     createFilm,
+  },
+  Subscription: {
+    conventionAdded: {
+      subscribe: () => {
+        PubSubSingleton.asyncIterator(["CONVENTION_ADDED"]);
+      },
+    },
   },
   Cinema: {
     currentlyPlaying,

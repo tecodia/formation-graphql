@@ -8,6 +8,13 @@ export default async (parent, { convention }, context, info) => {
         title
       );
 
+    context.pubsub.publish("CONVENTION_ADDED", {
+      conventionCreated: {
+        ...newConvention[0],
+        __typename: "Convention",
+      },
+    });
+
     return {
       ...newConvention[0],
       __typename: "Convention",
