@@ -44,6 +44,7 @@ import { redisCache } from "./config/cache";
     }),
     plugins: [SQLPlugin, RedisPlugin],
     cache: redisCache,
+    persistedQueries: true,
   });
   await server.start();
   server.applyMiddleware({ app });

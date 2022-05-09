@@ -10,11 +10,18 @@ type Film {
   title: String!
   duration: Int!
   directors: [Person!]!
-  actors: [Person!]!
+  actors: [Actor!]!
   producers: [Person!]!
   releaseDate: String!
   genre: Genre
   synopsis: String!
+}
+
+type Actor {
+  id: ID!
+  name: String!
+  age: Int!
+  films: [Film!]!
 }
 
 type FilmConnection {
