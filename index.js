@@ -2,6 +2,8 @@ import { ApolloServer } from "apollo-server";
 import typeDefs from "./src/typedefs";
 import resolvers from "./src/resolvers";
 import { ArticleDataSources } from "./src/dataSources/articleDataSources";
+import { AuthorDataSources } from "./src/dataSources/authorDataSources";
+
 import knex from "knex";
 
 const knexConnection = knex({
@@ -25,6 +27,7 @@ const server = new ApolloServer({
   resolvers,
   dataSources: () => ({
     articleDataSources: new ArticleDataSources(knexConnection),
+    authorDataSources: new AuthorDataSources(knexConnection),
   }),
 });
 
