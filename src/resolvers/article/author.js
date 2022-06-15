@@ -3,5 +3,5 @@ export default async (parent, args, { dataSources }) => {
     parent.id
   );
 
-  return author[0];
+  return author;
 };
