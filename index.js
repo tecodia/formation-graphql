@@ -3,22 +3,8 @@ import typeDefs from "./src/typedefs";
 import resolvers from "./src/resolvers";
 import { ArticleDataSources } from "./src/dataSources/articleDataSources";
 import { AuthorDataSources } from "./src/dataSources/authorDataSources";
-
-import knex from "knex";
-
-const knexConnection = knex({
-  client: "pg",
-  connection: {
-    host: "localhost",
-    user: "root",
-    password: "root",
-    database: "formationGraphql",
-    port: 5432,
-  },
-  options: {
-    enableArithAbort: false,
-  },
-});
+import knexConnection from "./src/config/db";
+import sqlPlugin from "./src/plugins/sql-plugin";
 
 // The ApolloServer constructor requires two parameters: your schema
 // definition and your set of resolvers.
@@ -29,6 +15,7 @@ const server = new ApolloServer({
     articleDataSources: new ArticleDataSources(knexConnection),
     authorDataSources: new AuthorDataSources(knexConnection),
   }),
+  plugins: [sqlPlugin],
 });
 
 // The `listen` method launches a web server.
