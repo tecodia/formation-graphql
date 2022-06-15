@@ -1,0 +1,19 @@
+interface Content {
+  id: ID!
+  title: String!
+  author: Author!
+}
+
+type Article implements Content {
+  id: ID!
+  title: String!
+  author: Author!
+  type: String
+}
+
+type Video implements Content {
+  id: ID!
+  title: String!
+  author: Author!
+  duration: Int!
+}

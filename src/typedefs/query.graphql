@@ -1,0 +1,5 @@
+type Query {
+  books: [Book]
+  contents: [Content!]!
+  articles(first: Int!, after: String): ArticleConnection!
+}

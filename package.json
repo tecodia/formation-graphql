@@ -9,8 +9,13 @@
     "watch": "nodemon --exec babel-node ./index.js"
   },
   "dependencies": {
+    "@graphql-tools/load-files": "^6.5.4",
+    "@graphql-tools/merge": "^8.2.14",
+    "apollo-datasource": "^3.3.1",
     "apollo-server": "^3.6.7",
-    "graphql": "^16.4.0"
+    "graphql": "^16.4.0",
+    "knex": "^2.1.0",
+    "pg": "^8.7.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",

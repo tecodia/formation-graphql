@@ -1,0 +1,14 @@
+type ArticleConnection {
+  edges: [ArticleEdge!]!
+  pageInfo: PageInfo!
+}
+
+type ArticleEdge {
+  node: Article!
+  cursor: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  endCursor: String!
+}
